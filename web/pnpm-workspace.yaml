@@ -1,0 +1,9 @@
+verifyDepsBeforeRun: false
+strictPeerDependencies: true
+saveExact: true
+minimumReleaseAgeExclude:
+  - '@tanstack/query-core@5.104.1'
+  - '@tanstack/react-query@5.104.1'
+  - '@types/node@24.19.1'
+onlyBuiltDependencies:
+  - esbuild

@@ -1,0 +1,106 @@
+{
+  "openapi": "3.1.1",
+  "info": {
+    "title": "ExpenseGuard.Api | v1",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost/"
+    }
+  ],
+  "paths": {
+    "/api/system": {
+      "get": {
+        "tags": [
+          "ExpenseGuard.Api"
+        ],
+        "summary": "Development-only local system readiness.",
+        "operationId": "GetSystemSummary",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SystemSummary"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ComponentSummary": {
+        "required": [
+          "id",
+          "name",
+          "status",
+          "detail"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "detail": {
+            "type": "string"
+          }
+        }
+      },
+      "SystemSummary": {
+        "required": [
+          "product",
+          "version",
+          "milestone",
+          "modelMode",
+          "financialAuthority",
+          "checkedAt",
+          "components"
+        ],
+        "type": "object",
+        "properties": {
+          "product": {
+            "type": "string"
+          },
+          "version": {
+            "type": "string"
+          },
+          "milestone": {
+            "type": "string"
+          },
+          "modelMode": {
+            "type": "string"
+          },
+          "financialAuthority": {
+            "type": "string"
+          },
+          "checkedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "components": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ComponentSummary"
+            }
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "ExpenseGuard.Api"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <ItemGroup>
+    <ProjectReference Include="../ExpenseGuard.Application/ExpenseGuard.Application.csproj" />
+    <ProjectReference Include="../ExpenseGuard.Infrastructure/ExpenseGuard.Infrastructure.csproj" />
+    <ProjectReference Include="../ExpenseGuard.ServiceDefaults/ExpenseGuard.ServiceDefaults.csproj" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" />
+  </ItemGroup>
+</Project>

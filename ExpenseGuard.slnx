@@ -1,0 +1,23 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/ExpenseGuard.Domain/ExpenseGuard.Domain.csproj" />
+    <Project Path="src/ExpenseGuard.Application/ExpenseGuard.Application.csproj" />
+    <Project Path="src/ExpenseGuard.Infrastructure/ExpenseGuard.Infrastructure.csproj" />
+    <Project Path="src/ExpenseGuard.Agent/ExpenseGuard.Agent.csproj" />
+    <Project Path="src/ExpenseGuard.McpClient/ExpenseGuard.McpClient.csproj" />
+    <Project Path="src/ExpenseGuard.ServiceDefaults/ExpenseGuard.ServiceDefaults.csproj" />
+    <Project Path="src/ExpenseGuard.Api/ExpenseGuard.Api.csproj" />
+    <Project Path="src/ExpenseGuard.Worker/ExpenseGuard.Worker.csproj" />
+    <Project Path="src/ExpenseGuard.McpServer/ExpenseGuard.McpServer.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/ExpenseGuard.UnitTests/ExpenseGuard.UnitTests.csproj" />
+    <Project Path="tests/ExpenseGuard.AgentTests/ExpenseGuard.AgentTests.csproj" />
+    <Project Path="tests/ExpenseGuard.IntegrationTests/ExpenseGuard.IntegrationTests.csproj" />
+    <Project Path="tests/ExpenseGuard.McpTests/ExpenseGuard.McpTests.csproj" />
+    <Project Path="tests/ExpenseGuard.ArchitectureTests/ExpenseGuard.ArchitectureTests.csproj" />
+  </Folder>
+  <Folder Name="/tools/">
+    <Project Path="tools/ExpenseGuard.ContractGenerator/ExpenseGuard.ContractGenerator.csproj" />
+  </Folder>
+</Solution>
