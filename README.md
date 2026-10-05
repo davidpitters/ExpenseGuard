@@ -1,7 +1,5 @@
 # ExpenseGuard
 
-**Implementation status (2026-10-05):** the supplied ExpenseGuard AI contracts define an organizational expense-auditing product. The implemented foundation includes secure account access, four organization roles and tenant isolation. Expense intake and agent review remain pending. See [local setup and demo credentials](docs/LOCAL_SETUP.md), [the implementation plan](PLAN.md) and [verified results](STATUS.md). The general feature descriptions below are not a list of completed functionality.
-
 ExpenseGuard is an expense-management application designed to help users record, organize, and understand their spending. It provides a foundation for tracking expenses, monitoring budgets, and turning everyday transaction data into useful financial insight.
 
 ## Why ExpenseGuard?
