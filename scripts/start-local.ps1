@@ -1,5 +1,5 @@
 #Requires -Version 7.0
-param([switch]$SkipDependencies, [switch]$SkipInstall)
+param([switch]$SkipDependencies, [switch]$SkipInstall, [switch]$SeedDemo)
 $ErrorActionPreference = 'Stop'
 $root = Split-Path -Parent $PSScriptRoot
 Push-Location $root
@@ -37,6 +37,8 @@ try {
     $env:ObjectStorage__Endpoint = 'http://localhost:9000'
   }
   $env:ASPNETCORE_ENVIRONMENT = 'Development'
+  $env:Demo__Seed = $SeedDemo.IsPresent.ToString()
+  $env:Database__Initialize = $SeedDemo.IsPresent.ToString()
   $env:Services__Worker = 'http://localhost:5101'
   $env:Services__Mcp = 'http://localhost:5102'
   $logDir = Join-Path $root '.local/logs'
@@ -65,7 +67,8 @@ try {
   }
   if ($IsWindows) { $webOptions.WindowStyle = 'Hidden' }
   $children.Add((Start-Process @webOptions))
-  Write-Host 'Starting ExpenseGuard at http://127.0.0.1:5173. Logs: .local/logs'
+  $webScheme = if (Test-Path -LiteralPath (Join-Path $root '.local/localhost.pem')) { 'https' } else { 'http' }
+  Write-Host "Starting ExpenseGuard at ${webScheme}://localhost:5173. Logs: .local/logs"
   Write-Host 'Ctrl+C stops application hosts. Dependency containers remain available; docker compose down stops them without deleting volumes.'
   while ($true) {
     foreach ($child in $children) {

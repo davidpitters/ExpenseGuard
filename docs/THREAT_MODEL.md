@@ -1,5 +1,7 @@
 # Threat model
 
+Identity verification now tests forged/missing CSRF, wrong-workspace login, cross-organization identifiers, revoked membership/role sessions, password lockout, unscoped data access and production reuse of demo data. Deployment threats (shared Data Protection keys, ingress trust, rate limiting) remain open until hardening. Browser verification and real PostgreSQL startup are still outstanding; see STATUS.md.
+
 Trust boundaries: browser → API; uploaded evidence → extraction; worker/model → MCP; MCP → tenant data; recommendation → human decision. Only validated identity, server claims, authorization policies and deterministic rules are authoritative.
 
 | Threat | Required control | Verification milestone |

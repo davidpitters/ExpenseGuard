@@ -1,5 +1,7 @@
 # Demonstration status
 
+Account access is now implemented. Follow [local setup](LOCAL_SETUP.md), sign in at `/access`, inspect each role and the admin/auditor directory, then sign out. Browser sign-in against PostgreSQL remains unverified on this host; offline integration tests exercise the real Identity stack against SQLite. The full product scenario below is still pending.
+
 Current milestone demonstrates process boundaries, live health, the React foundation, generated API contracts, offline tests and a fail-closed MCP route. It cannot yet demonstrate expense submission or financial review.
 
 Use the README local startup instructions. Open the workspace status screen. Compare API/worker/MCP availability with dependency readiness, stop one local service and refresh, then inspect the safe failure state. `/mcp` must reject anonymous requests. OpenAPI is available only in Development.

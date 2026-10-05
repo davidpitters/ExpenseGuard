@@ -2,15 +2,24 @@
 
 Source contracts: `EXPENSEGUARD_PRODUCT_SPEC.md` and `EXPENSEGUARD_MCP_SERVER_SPEC.md`, read in full on 2026-10-02. Work is local only. No cloud provisioning, paid calls, external publishing, or financial connections are authorized.
 
-## Current milestone: 0 — architecture and executable skeleton
+## Current milestone: 1 — identity and tenancy (infrastructure acceptance pending)
 
-- [ ] Establish the .NET 10 solution, dependency directions, package pins, analyzers, and offline test harnesses.
-- [ ] Create separate API, worker, MCP server, and React hosts with honest health reporting.
-- [ ] Configure PostgreSQL/pgvector, Redis, and MinIO in local Docker Compose.
-- [ ] Generate the strict TypeScript client from ASP.NET Core OpenAPI 3.1.
-- [ ] Verify backend restore/build/format/tests and frontend install/lint/typecheck/tests/build.
+- [x] Establish the .NET 10 solution, dependency directions, package pins, analyzers, and offline test harnesses.
+- [x] Create separate API, worker, MCP server, and React hosts with honest health reporting.
+- [x] Configure PostgreSQL/pgvector, Redis, and MinIO in local Docker Compose (runtime gate below).
+- [x] Generate the strict TypeScript client from ASP.NET Core OpenAPI 3.1.
+- [x] Verify backend restore/build/format/tests and frontend install/lint/typecheck/tests/build.
 - [ ] Exercise all three hosts and the frontend. Validate Compose startup when a container engine is available.
-- [ ] Record exact results, limitations, and next work in STATUS.md.
+- [x] Record exact results, limitations, and next work in STATUS.md.
+
+Milestone 1:
+
+- [x] Identity secure cookies, HTTPS antiforgery, lockout and session revocation.
+- [x] Organizations, memberships, four roles, scoped queries and write guards.
+- [x] Synthetic demo seed with production refusal; initial PostgreSQL migration.
+- [x] Account UI, generated client and offline role/isolation integration tests.
+- [ ] Apply migration and seed against PostgreSQL; run browser login/logout for all roles.
+- [ ] Verify account layout/keyboard/mobile behavior (browser helper currently fails to initialize).
 
 Milestone 0 does not claim a working expense review, identity system, business MCP catalogue, model provider, or gold-dataset evaluation. Those capabilities enter through the following acceptance gates.
 

@@ -1,6 +1,7 @@
 **/bin/
 **/obj/
 **/node_modules/
+.pnpm-store/
 web/dist/
 .env
 .env.*

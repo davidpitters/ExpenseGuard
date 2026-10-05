@@ -1,5 +1,5 @@
 #Requires -Version 7.0
-param([switch]$RequireDependencies)
+param([switch]$RequireDependencies, [string]$WebUrl = 'http://127.0.0.1:5173')
 $ErrorActionPreference = 'Stop'
 foreach ($port in @(5100, 5101, 5102)) {
   $live = Invoke-WebRequest "http://localhost:$port/health/live" -TimeoutSec 10 -SkipHttpErrorCheck
@@ -13,9 +13,9 @@ $mcp = Invoke-WebRequest 'http://localhost:5102/mcp' -Method Post -ContentType '
 if ($mcp.StatusCode -ne 401) { throw 'MCP must be locked at this milestone.' }
 $summary = Invoke-RestMethod 'http://localhost:5100/api/system' -TimeoutSec 10
 if ($summary.components.Count -ne 6) { throw 'System contract mismatch.' }
-$web = Invoke-WebRequest 'http://127.0.0.1:5173/' -TimeoutSec 10
+$web = Invoke-WebRequest "$WebUrl/" -TimeoutSec 10
 if ($web.StatusCode -ne 200 -or $web.Content -notmatch 'ExpenseGuard') { throw 'Web shell unavailable.' }
-$proxied = Invoke-RestMethod 'http://127.0.0.1:5173/api/system' -TimeoutSec 10
+$proxied = Invoke-RestMethod "$WebUrl/api/system" -TimeoutSec 10
 if ($proxied.product -ne 'ExpenseGuard') { throw 'Vite API proxy failed.' }
 Write-Host 'PASS: three hosts, MCP denial, system contract, web shell and API proxy.'
 if (-not $RequireDependencies) { Write-Host 'Dependency readiness was observed, not required. Use -RequireDependencies for full milestone acceptance.' }

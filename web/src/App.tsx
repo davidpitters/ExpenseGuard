@@ -1,5 +1,6 @@
 import { NavLink, Route, Routes, Link } from 'react-router-dom';
 import { Workspace } from './Workspace';
+import { Access } from './Access';
 
 export function App() {
   return (
@@ -24,6 +25,9 @@ export function App() {
         </div>
         <p className="nav-label">WORKSPACE</p>
         <nav>
+          <NavLink to="/access">
+            <span aria-hidden="true">◉</span> Account access
+          </NavLink>
           <NavLink to="/" end>
             <span aria-hidden="true">▦</span> Overview
           </NavLink>
@@ -48,6 +52,7 @@ export function App() {
         </header>
         <main id="main">
           <Routes>
+            <Route path="/access" element={<Access />} />
             <Route path="/" element={<Workspace />} />
             <Route path="/architecture" element={<Architecture />} />
             <Route
@@ -120,7 +125,8 @@ function Architecture() {
         <p className="scope-note">
           This is the target architecture. The current foundation implements
           process hosts, health checks and API contracts. Expense workflows and
-          authentication are subsequent milestones.
+          the complete investigation are subsequent milestones. Account access
+          now provides organization-scoped Identity sessions.
         </p>
       </section>
       <div className="two-columns">

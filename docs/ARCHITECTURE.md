@@ -1,5 +1,7 @@
 # Architecture
 
+Milestone 1 adds ASP.NET Core Identity, organization memberships and claim-scoped EF access. The account UI consumes the generated OpenAPI client. ADR 0015 describes cookie/tenant boundaries and offline SQLite integration tests; Npgsql remains the runtime provider.
+
 ExpenseGuard is a modular monolith with four independently hosted processes. Shared domain rules do not depend on persistence, HTTP, MCP, or an LLM SDK.
 
 ```mermaid

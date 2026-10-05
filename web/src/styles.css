@@ -839,3 +839,61 @@ footer {
     scroll-behavior: auto !important;
   }
 }
+.access-panel {
+  padding: 28px;
+  margin-bottom: 24px;
+}
+.access-form {
+  display: grid;
+  gap: 12px;
+  max-width: 480px;
+}
+.access-form input {
+  padding: 12px;
+  border: 1px solid #687789;
+  border-radius: 6px;
+  background: white;
+  color: #182736;
+  font: inherit;
+}
+.access-form label {
+  font-weight: 600;
+  margin-top: 8px;
+}
+.access-form button {
+  margin-top: 12px;
+}
+.access-panel button {
+  padding: 10px 16px;
+  border: 1px solid #526777;
+  border-radius: 6px;
+  background: #183f39;
+  color: white;
+  cursor: pointer;
+}
+.access-panel button:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+.access-panel [role='alert'] {
+  color: #9b3027;
+}
+.session-details {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 14px;
+  margin-block: 24px;
+}
+.session-details dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.session-details dt {
+  font-weight: 600;
+}
+.member-pagination {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: 20px;
+}

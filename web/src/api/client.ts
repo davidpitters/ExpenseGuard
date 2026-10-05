@@ -4,7 +4,7 @@ import type { paths, components } from './schema';
 export type SystemSummary = components['schemas']['SystemSummary'];
 export type ComponentSummary = components['schemas']['ComponentSummary'];
 
-const client = createClient<paths>({
+export const client = createClient<paths>({
   baseUrl: window.location.origin,
   fetch: (request) => globalThis.fetch(request),
 });
